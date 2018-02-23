@@ -8,13 +8,13 @@
 <body>
     <h1>Form</h1>
 <form action="#" th:action="@{/index}" th:object="${song}" method="post">
-<!--<table id="test">-->
-
+<table id="test">
     <script>
         for ( var i = 0 ; i < 5 ; i++ ){
             //<input type="file" th:filed="song.file" accept="audio/*"/>
+            document.write("<tr>");
             document.write("<input type=\"file\" th:field=\"*{song.file}\" accept=\"audio/*\"/>");
-
+            document.write("</tr>");
             //上記の部分を配列別で読み込めるようにしたい。
             //おそらく th:filed = "song[0].file ([0]~[4]) できるはず?なのでJavaプログラムに問題があると思われる。
         }
@@ -23,7 +23,7 @@
         <input type="submit" value="upload"/>
         <input type="reset" value="reset"/>
     </p>
-<!--</table>-->
+</table>
 </form>
     <h1>Result</h1>
 <p th:text="${song.file}"/>
