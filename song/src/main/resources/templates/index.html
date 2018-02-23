@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Song sample</title>
+
+</head>
+<body>
+    <h1>Form</h1>
+<form action="#" th:action="@{/index}" th:object="${song}" method="post">
+<!--<table id="test">-->
+
+    <script>
+        for ( var i = 0 ; i < 5 ; i++ ){
+            document.write("<input type=\"file\" th:field=\"*{song.file}\" accept=\"audio/*\"/>");
+        }
+    </script>
+    <p>
+        <input type="submit" value="upload"/>
+        <input type="reset" value="reset"/>
+    </p>
+<!--</table>-->
+</form>
+    <h1>Result</h1>
+<p th:text="${song.file}"/>
+<p th:text="${song.file}"/>
+
+</body>
+</html>
