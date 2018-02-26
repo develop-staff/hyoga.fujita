@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>oneData_input</title>
+</head>
+<body>
+
+
+    <h1>Form</h1>
+    <form action="#" th:action="@{/index}" th:object="${song}" method="post">
+        <input type="text" th:field="*{fileName}"/>
+        <br/>
+        <input type="submit" value="送信"/>
+    </form>
+
+
+    <h1>Result</h1>
+    <div th:object="${song}">
+        <p th:text="*{fileName}"/>
+    </div>
+
+
+</body>
+</html>
