@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>MySQLへの接続</title>
+</head>
+<body>
+<h1>Form</h1>
+<div th:each="song : ${songs}">
+    <tr th:text="${song.id}"/>
+    <tr th:text="${song.name}"/>
+</div>
+</body>
+</html>
